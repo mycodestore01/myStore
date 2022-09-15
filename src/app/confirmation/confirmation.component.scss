@@ -1,0 +1,26 @@
+.confirmation-dialog {
+    .icon-sec {
+        display: flex;
+        justify-content: center;
+
+        .success-icon {
+            font-size: 100px;
+            height: 100px;
+            width: 100px;
+            color: green;
+        }
+        .failure-icon {
+            font-size: 100px;
+            height: 100px;
+            width: 100px;
+            color: red;
+        }
+    }
+
+    .message-sec {
+        font-size: 22px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-weight: 500;
+    }
+}

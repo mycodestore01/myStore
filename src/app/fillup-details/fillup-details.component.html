@@ -1,0 +1,101 @@
+<div class="fillup-details">
+    <h2>Enter your details</h2>
+    <div>
+        <p>Are you existing customer?</p>
+        <div class="existing-user-radios">
+            <mat-radio-group aria-label="Select an option" [(ngModel)]="isExistingCustomer">
+                <mat-radio-button class="radio-yes" value="yes">Yes</mat-radio-button>
+                <mat-radio-button class="radio-no" value="no">No</mat-radio-button>
+            </mat-radio-group>
+        </div>
+    </div>
+    <div *ngIf="isExistingCustomer=='no'">
+        <form [formGroup]="userDetails">
+            <div class="form-field-wrap">
+                <div class="form-field-fn">
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label>First name</mat-label>
+                        <input formControlName="firstName" matInput placeholder="Ex. John">
+                    </mat-form-field>
+                </div>
+                
+                <div class="form-field-ln">
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label>Last name</mat-label>
+                        <input formControlName="lastName" matInput placeholder="Ex. Fernandese">
+                    </mat-form-field>
+                </div>
+            </div>
+           
+            <div>
+                
+            </div>
+        
+            <div class="form-field-wrap">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input formControlName="email" matInput placeholder="Ex. name@domain.com">
+                </mat-form-field>
+            </div>
+            <div class="form-field-wrap">
+                <mat-form-field class="example-full-width" appearance="outline" >
+                    <mat-label>Password</mat-label>
+                    <input formControlName="password" matInput type="password" placeholder="Pass@1234">
+                    <mat-hint align="end">Password should contain letters(small & upper case), digits, special character and min. 8 chars long</mat-hint>
+                </mat-form-field>
+            </div>
+            <div class="form-field-wrap">
+                <mat-form-field class="example-full-width" appearance="outline" >
+                    <mat-label>Mobile Number</mat-label>
+                    <input formControlName="mobile" matInput placeholder="Ex. +919876543210">
+                </mat-form-field>
+            </div>
+           <div class="form-field-wrap">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Address</mat-label>
+                    <input formControlName="address" matInput placeholder="Ex. A2/302, Building, Road, Area">
+                </mat-form-field>
+           </div>
+           <div class="form-field-wrap"> 
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>City</mat-label>
+                    <input formControlName="city" matInput placeholder="Ex. Pune">
+                </mat-form-field>
+           </div>
+            <div class="form-field-wrap">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>State</mat-label>
+                    <input formControlName="state" matInput placeholder="Ex. Maharashtra">
+                </mat-form-field>
+            </div>
+            <div class="form-field-wrap">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Postal Code</mat-label>
+                    <input formControlName="postalCode" matInput #postalCode placeholder="Ex. 411001" value="411001">
+                    <mat-hint align="end">{{postalCode.value.length}} / 6</mat-hint>
+                </mat-form-field>
+            </div>
+           
+            <button [style.opacity]="userDetails.invalid ? '0.7' : '1'" [disabled]="userDetails.invalid" class="share-btn" (click)="submit()">Submit</button>
+        </form>
+    </div>
+    <div *ngIf="isExistingCustomer=='yes'">
+        <form [formGroup]="userLogin">
+            <div class="form-field-wrap">
+                <mat-form-field class="example-full-width" appearance="outline" >
+                    <mat-label>Username</mat-label>
+                    <input formControlName="username" matInput placeholder="yourname@email.com">
+                </mat-form-field>
+            </div>
+            <div class="form-field-wrap">
+                <mat-form-field class="example-full-width" appearance="outline" >
+                    <mat-label>Password</mat-label>
+                    <input formControlName="password" matInput type="password" placeholder="Pass@1234" #pwd>
+                    <mat-hint align="end">Password should contain letters(small & upper case), digits, special character and min. 8 chars long</mat-hint>
+                </mat-form-field>
+            </div>
+            <button [style.opacity]="userLogin.invalid ? '0.7' : '1'" [disabled]="userLogin.invalid" class="share-btn" (click)="login()">Login</button>
+        </form>
+
+    </div>
+</div>

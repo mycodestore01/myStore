@@ -1,0 +1,71 @@
+<h2>Checkout</h2>
+<div class="checkout-container">
+  <div class="left-container">
+    <mat-card class="cart-products">
+      <div *ngFor="let item of addedProducts">
+        <h3 class="name">
+          {{ item.name }}
+        </h3>
+        <p class="description">
+          <span>Quantity:</span>
+          <span>{{ item.cartCount }}</span>
+          <span class="multiplier">X</span>
+          <span>₹{{ item.price }}</span>
+        </p>
+        <p class="description total-price">
+          <span>Total Price: </span>
+          <!-- <span>Rs.</span> -->
+          <span>₹{{ item.price * item.cartCount }}</span>
+        </p>
+      </div>
+    </mat-card>
+  </div>
+  <div class="right-container">
+    <mat-card>
+      <h3>PRICE DETAILS</h3>
+      <hr />
+      <div class="calc-container">
+        <div class="particular">Price</div>
+        <div class="amount">₹{{ prodTotalPrice }}</div>
+      </div>
+      <div class="calc-container discount">
+        <div class="particular">Discount</div>
+        <div class="amount">
+          <!-- <mat-icon>check_indeterminate_small</mat-icon> -->
+          <span class="minus">-</span>
+          <!-- {{prodTotalPrice * 0.1}} -->
+          {{ getCalcAmount('discount') }}
+        </div>
+      </div>
+      <div class="calc-container">
+        <div class="particular">Delivery Charges</div>
+        <div class="amount">
+          <!-- {{ prodTotalPrice >= 500 ? 0 : 50}} -->
+          {{ getCalcAmount('dc') }}
+        </div>
+      </div>
+      <hr />
+      <div class="calc-container final">
+        <div class="particular">Total Amount</div>
+        <div class="amount">
+          {{ getCalcAmount('final') }}
+        </div>
+      </div>
+      <p class="helper-text">
+        You will save <b>₹{{ this.discountAmount }}</b> on this order.
+      </p>
+    </mat-card>
+    <div class="security-info">
+      <div class="logo">
+        <img
+          src="./../../assets/security-privacy-symbol.svg"
+          alt="security & privacy logo"
+        />
+      </div>
+      <div class="text">
+        Safe and Secure Payments.Easy returns. 100% Authentic products.
+      </div>
+    </div>
+    <button class="place-order-btn" (click)="placeOrder()">Place Order</button>
+  </div>
+</div>

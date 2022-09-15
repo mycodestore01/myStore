@@ -1,0 +1,18 @@
+<h2>Products</h2>
+<div class="product-list mb-15" *ngFor="let product of productList; let i = index; let isLast = last">
+    <h3 class="name">
+        <a [routerLink]="['/product-details', i]" (click)="navigateToDetails(product, i)">
+            {{product.name}}
+        </a>
+    </h3>
+    <p class="description" *ngIf="product.description">
+        <span>Description:</span> {{product.description}}
+    </p>
+    <button *ngIf="product.cartCount == 0" (click)="incrementor(product, i)" class="share-btn">Add to cart</button>
+
+    <div class="inc-dec-cont" *ngIf="product.cartCount > 0">
+        <button class="dec-btn" (click)="decrementor(product, i)">-</button>
+        <input class="prod-count" type="number" [(ngModel)]="product.cartCount"/>
+        <button class="inc-btn" (click)="incrementor(product, i)">+</button>
+    </div>
+</div>

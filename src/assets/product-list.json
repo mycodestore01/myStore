@@ -1,0 +1,9 @@
+{
+ "productDetails": [
+    {"name": "iPhone 11", "price": 30000,  "description": "", "cartCount": 0},
+    {"name": "iPhone 11 Pro", "price": 40000,  "description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...", "cartCount": 0},
+    {"name": "iPhone XR", "price": 90000,  "description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...", "cartCount": 0},
+    {"name": "iPhone 13 Mini", "price": 70000,  "description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...", "cartCount": 0},
+    {"name": "iPhone 13 Pro", "price": 110000,  "description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...", "cartCount": 0}
+  ]
+}

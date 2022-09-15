@@ -1,0 +1,13 @@
+<div class="confirmation-dialog">
+    <div class="icon-sec">
+        <mat-icon class="success-icon" *ngIf="data.type == 'Success'">
+            check_circle
+        </mat-icon>
+        <mat-icon class="failure-icon" *ngIf="data.type == 'Failure'">
+            cancel
+        </mat-icon>
+    </div>
+    <div class="message-sec">
+        {{data.type == 'Success' ? "You've successfully place a order." : "We could not place order, please try again later." }}
+    </div>
+</div>

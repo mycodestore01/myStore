@@ -1,0 +1,62 @@
+ .fillup-details {
+
+    .existing-user-radios {
+        margin-top: 10px;
+        margin-bottom: 20px;
+
+        .mat-radio-button {
+            &.radio-no {
+                margin-left: 20px;
+            }
+            
+            &.mat-radio-checked {
+                .mat-radio-label {
+                    .mat-radio-container {
+                        .mat-radio-outer-circle {
+                            border-color: #0069ff;
+    
+                        }
+    
+                        .mat-radio-inner-circle {
+                            background-color: #0069ff;
+                        }
+                    }
+                }
+            }
+
+            
+        }
+        
+    }
+
+    .form-field-wrap {
+        display: flex;
+        width: 30%;
+
+        &:nth-child(1) {
+            justify-content: space-between;
+            .form-field-fn, .form-field-ln {
+                width: 48%;
+            }
+        }
+
+        .mat-form-field {
+            width: 100%;
+        }
+    
+    }
+
+    .share-btn {
+        padding: 10px 15px;
+        background: #0069ff;
+        border: none;
+        color: white;
+        font-weight: 600;
+        cursor: pointer;
+        width: 125px;
+
+        &[disabled] {
+            cursor: default;
+        }
+    }
+ }

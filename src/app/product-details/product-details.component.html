@@ -1,0 +1,92 @@
+<h2>Product Details</h2>
+<div class="product-list mb-15" *ngIf="product">
+    <button (click)="goBack()" class="back-btn">Back</button>
+    <h3 class="name">
+        {{product.name}}
+    </h3>
+    <p class="description">
+        <span>Description:</span> {{product.description}}
+    </p>
+    <p class="description">
+        <span>Price:</span> Rs.{{product.price}}
+    </p>
+    <p class="offers">
+        <span>Offers:</span> Pay only ₹13,999.00 ₹13,699.00. Apply now & get ₹300 back + rewards worth ₹1500* + 3% back
+        with Amazon Pay ICICI Bank credit card
+        EMI starts at ₹659. No Cost EMI available EMI options.
+    </p>
+
+    <button *ngIf="product.cartCount == 0" (click)="incrementor()" class="share-btn">Add to cart</button>
+    <!-- <button class="share-btn">Add to cart</button> -->
+
+    <div class="inc-dec-cont" *ngIf="product.cartCount > 0">
+        <button class="dec-btn" (click)="decrementor()">-</button>
+        <input class="prod-count" type="number" [(ngModel)]="product.cartCount" />
+        <button class="inc-btn" (click)="incrementor()">+</button>
+    </div>
+    
+    <div class="emi-options">
+        <h4>EMI Options</h4>
+        <p>
+            Bajaj Finserv EMI Card
+            Amazon Pay ICICI Credit Card
+            Processing fee of ₹199 by bank
+        </p>
+
+        <p>
+            American Express Credit Card
+            Processing fee of ₹99 by bank
+        </p>
+
+
+        <p>
+            Axis Bank Credit Card
+            Bank of Baroda Credit Card
+            Citibank Credit Card
+            HDFC Bank Credit Card
+            Processing fee of ₹199 by bank
+
+        </p>
+
+        <p>
+            HSBC Bank Credit Card
+            ICICI Bank Credit Card
+            Processing fee of ₹199 by bank
+        </p>
+        <p>
+            IndusInd Bank Credit Card
+        </p>
+        <p>
+            Jammu and Kashmir Bank Credit Card
+        </p>
+        <p>
+
+            Kotak Mahindra Bank Credit Card
+            Processing fee of ₹199 by bank
+        </p>
+        <p>
+            RBL Bank Credit Card
+        </p>
+
+        <p>
+            
+            SBI Credit Card
+            Processing fee of ₹99 by bank
+        </p>
+        <p>
+            Standard Chartered Bank Credit Card
+        </p>
+
+
+        <p>
+            Yes Bank Credit Card
+        </p>
+
+    </div>
+   
+    <!-- <div class="inc-dec-cont">
+        <button class="dec-btn">-</button>
+        <input class="prod-count" type="number"/>
+        <button class="inc-btn">+</button>
+    </div> -->
+</div>
